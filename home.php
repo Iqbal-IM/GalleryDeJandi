@@ -1,82 +1,83 @@
+<div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <!-- <h5>First slide label</h5>
+                            <p>Some representative placeholder content for the first slide.</p> -->
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+
 <!-- container -->
 <div class="container">
     <!-- row -->
     <div class="row">
 
         <div class="section">
-            <div id="carouselExampleFade" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                </div>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="img/slide1.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block">
-                            <!-- <h5>First slide label</h5>
-                            <p>Some representative placeholder content for the first slide.</p> -->
-                        </div>
+            <div class="col-md-4">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="img/slide2.jpg" alt="">
                     </div>
-                    <div class="carousel-item">
-                        <img src="img/slide2.jpg" class="d-block w-100" alt="...">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="img/slide3.jpg" class="d-block w-100" alt="...">
+                    <div class="shop-body">
+                        <h3>Tenun<br>Collection</h3>
+                        <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
-        </div>
+            <!-- /shop -->
 
-        <div class="col-md-4 col-xs-6">
-            <div class="shop">
-                <div class="shop-img">
-                    <img src="img/slide2.jpg" alt="">
-                </div>
-                <div class="shop-body">
-                    <h3>Tenun<br>Collection</h3>
-                    <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- shop -->
+            <div class="col-md-4">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="img/slide1.jpg" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Accessories<br>Collection</h3>
+                        <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <!-- /shop -->
+            <!-- /shop -->
 
-        <!-- shop -->
-        <div class="col-md-4 col-xs-6">
-            <div class="shop">
-                <div class="shop-img">
-                    <img src="img/slide1.jpg" alt="">
-                </div>
-                <div class="shop-body">
-                    <h3>Accessories<br>Collection</h3>
-                    <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-        </div>
-        <!-- /shop -->
-
-        <!-- shop -->
-        <div class="col-md-4 col-xs-6">
-            <div class="shop">
-                <div class="shop-img">
-                    <img src="img/slide3.jpg" alt="">
-                </div>
-                <div class="shop-body">
-                    <h3>Fashion<br>Collection</h3>
-                    <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+            <!-- shop -->
+            <div class="col-md-4">
+                <div class="shop">
+                    <div class="shop-img">
+                        <img src="img/slide3.jpg" alt="">
+                    </div>
+                    <div class="shop-body">
+                        <h3>Fashion<br>Collection</h3>
+                        <a href="#" class="cta-btn">Shop now <i class="fa fa-arrow-circle-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- /row -->
     </div>
-    <!-- /row -->
 
     <div class="col-md-12">
         <div class="section-title">
@@ -86,7 +87,7 @@
     </div>
     <!-- /section title -->
 
-    <div class="col-md-12 col-6">
+    <div class="col-md-12 col-12">
         <div class="row">
             <div class="products-tabs">
                 <!-- tab -->
@@ -167,7 +168,7 @@
     </div>
     <!-- /section title -->
 
-    <div class="col-md-12 col-6">
+    <div class="col-md-12">
         <div class="row">
 
             <div class="products-tabs">

@@ -709,11 +709,6 @@ textarea.input {
 
 }
 
-.carousel-inner {
-  border-radius: 10px;
-}
-
-
 /*----------------------------*\
 	responsive nav
 \*----------------------------*/
@@ -815,6 +810,7 @@ textarea.input {
   position: relative;
   background-color: #E4E7ED;
   z-index: -1;
+  display: flex;
 }
 
 .shop .shop-img>img {
@@ -2311,14 +2307,21 @@ textarea.input {
   }
 
   .product .product-img>img {
-    /* border-radius: 8px 8px 0 0; */
+
     width: 100%;
-    /* height: 170px; */
+    height: 350px;
 
   }
 
-  .carousel-item {
+  /* .carousel-item {
     height: 100%;
+
+  } */
+
+  .shop .shop-img>img {
+    width: 100%;
+    -webkit-transition: 0.2s all;
+    transition: 0.2s all;
 
   }
 
@@ -2369,6 +2372,15 @@ textarea.input {
     margin-top: 10px;
   }
 
+  .product .product-img>img {
+
+    width: 100%;
+    height: 200px;
+
+  }
+
+
+
 }
 
 @media only screen and (max-width: 480px) {
@@ -2384,5 +2396,12 @@ textarea.input {
   .store-pagination {
     float: none;
     margin-top: 10px;
+  }
+
+  .product .product-img>img {
+
+    width: 100%;
+    height: 200px;
+
   }
 }
