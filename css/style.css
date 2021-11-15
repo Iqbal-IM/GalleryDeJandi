@@ -60,7 +60,6 @@ body {
   font-weight: 400;
   color: #333;
 
-
 }
 
 h1,
@@ -688,6 +687,33 @@ textarea.input {
   display: none;
 }
 
+
+/* Navbar */
+
+.main-nav li a {
+  color: #000000;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+
+/* slider */
+
+.carousel-item {
+  height: 500px;
+
+}
+
+.carousel-item img {
+  margin-top: -120px;
+
+}
+
+.carousel-inner {
+  border-radius: 10px;
+}
+
+
 /*----------------------------*\
 	responsive nav
 \*----------------------------*/
@@ -795,6 +821,7 @@ textarea.input {
   width: 100%;
   -webkit-transition: 0.2s all;
   transition: 0.2s all;
+  min-height: 350px;
 }
 
 .shop:hover .shop-img>img {
@@ -892,11 +919,6 @@ textarea.input {
 	product
 \*----------------------------*/
 
-
-.carousel-inner {
-  border: 3px;
-  object-fit: cover;
-}
 
 .product {
   position: relative;
@@ -2289,12 +2311,20 @@ textarea.input {
   }
 
   .product .product-img>img {
-    border-radius: 8px 8px 0 0;
+    /* border-radius: 8px 8px 0 0; */
     width: 100%;
-    height: 170px;
-
+    /* height: 170px; */
 
   }
+
+  .carousel-item {
+    height: 100%;
+
+  }
+
+
+
+
 
   #top-header .header-links.pull-right {
     float: none !important;

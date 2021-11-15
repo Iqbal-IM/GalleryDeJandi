@@ -16,10 +16,10 @@ include 'admin/koneksi.php';
 
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
-
-	<!-- Bootstrap -->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Bootstrap -->
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
 
@@ -88,52 +88,6 @@ include 'admin/koneksi.php';
 					<div class="col-md-3 clearfix">
 						<div class="header-ctn">
 
-							<!-- Cart -->
-							<div class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-									<i class="fa fa-shopping-cart"></i>
-									<span>Your Cart</span>
-									<div class="qty">3</div>
-								</a>
-								<div class="cart-dropdown">
-
-									<div class="cart-list">
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/product01.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-
-										<div class="product-widget">
-											<div class="product-img">
-												<img src="./img/product02.png" alt="">
-											</div>
-											<div class="product-body">
-												<h3 class="product-name"><a href="#">product name goes here</a></h3>
-												<h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-											</div>
-											<button class="delete"><i class="fa fa-close"></i></button>
-										</div>
-									</div>
-									<div class="cart-summary">
-										<small>3 Item(s) selected</small>
-										<h5>SUBTOTAL: $2940.00</h5>
-									</div>
-									<div class="cart-btns">
-										<a href="#">View Cart</a>
-										<a href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-									</div>
-								</div>
-
-							</div>
-
-							<!-- /Cart -->
-
 							<div>
 								<!--  -->
 								<a href="admin/login.php">
@@ -165,6 +119,7 @@ include 'admin/koneksi.php';
 		<!-- /MAIN HEADER -->
 	</header>
 	<!-- /HEADER -->
+
 	<!-- NAVIGATION -->
 	<nav id="navigation">
 		<!-- container -->
@@ -173,27 +128,19 @@ include 'admin/koneksi.php';
 			<div id="responsive-nav">
 				<!-- NAV -->
 				<ul class="main-nav nav">
-					<li><a href="?m=home">HOME</a></li>
-					<li><a href="?m=produk">PRODUCT</a></li>
-					<li><a href="#">ABOUT</a></li>
+					<li><a href="?m=home">Home</a></li>
+					<li><a href="?m=produk">Product</a></li>
+					<li><a href="#">About</a></li>
 				</ul>
-				<!-- <ul class="main-nav nav navbar-nav">
-					<li><a href="?m=home">HOME</a></li>
-					<li><a href="?m=produk">PRODUCT</a></li>
-					<li><a href="#">ABOUT</a></li>
-				</ul> -->
 				<!-- /NAV -->
 			</div>
 			<!-- /responsive-nav -->
 		</div>
 		<!-- /container -->
-
 	</nav>
 	<!-- /NAVIGATION -->
 
 
-
-	<!-- <div class="section"> -->
 	<!-- SECTION -->
 	<div class="content">
 		<!-- container -->
