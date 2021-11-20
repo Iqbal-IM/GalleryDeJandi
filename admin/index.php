@@ -53,7 +53,7 @@ if ($_SESSION['login'] == '') {
                                 <li>
                                     <hr class="dropdown-divider">
                                 </li>
-                                <li><a class="dropdown-item" href="aksi.php?act=logout">Logout <i class="fa fa-sign-out"></i></a></li>
+                                <li><a class="dropdown-item" href="aksi.php?act=logout" onclick="return confirm('Anda Yakin ingin Logout?')">Logout <i class="fa fa-sign-out"></i></a></li>
                             </ul>
                         </li>
                     </div>
@@ -62,6 +62,7 @@ if ($_SESSION['login'] == '') {
         </nav>
 
         <div class="content">
+
             <?php
 
             if (isset($_GET['m'])) {
@@ -86,6 +87,7 @@ if ($_SESSION['login'] == '') {
                 include 'produk.php';
             }
             ?>
+
         </div>
 
     </div>

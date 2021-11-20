@@ -1,553 +1,277 @@
 <?php
 include 'admin/koneksi.php';
 
+
+
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-	<title>Gallery De Jandy</title>
-	<meta charset="UTF-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!--===============================================================================================-->
-	<link rel="icon" type="image/png" href="images/icons/favicon.png" />
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
-	<!--===============================================================================================-->
-	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
-	<link rel="stylesheet" type="text/css" href="css/util.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
-	<!--===============================================================================================-->
+	<title>Gallery De Jandi</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700" rel="stylesheet">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Bootstrap -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+	<!-- Slick -->
+	<link type="text/css" rel="stylesheet" href="css/slick.css" />
+	<link type="text/css" rel="stylesheet" href="css/slick-theme.css" />
+
+	<!-- nouislider -->
+	<link type="text/css" rel="stylesheet" href="css/nouislider.min.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
+
 </head>
 
-<body class="animisition">
-
-	<!-- Header -->
-	<header class="header-v4">
-		<!-- Header desktop -->
-		<div class="container-menu-desktop">
-			<!-- Topbar -->
-			<div class="top-bar">
-				<div class="content-topbar flex-sb-m h-full container">
-					<div class="left-top-bar">
-
+<body>
+	<!-- HEADER -->
+	<header>
+		<!-- MAIN HEADER -->
+		<div id="header">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<!-- LOGO -->
+					<div class="col-md-3">
+						<div class="header-logo">
+							<a href="#" class="logo">
+								<img src="./img/logo1.png" alt="" height="70px" width="169px">
+							</a>
+						</div>
 					</div>
+					<!-- /LOGO -->
+					<div class="col-md-6">
 
-					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
+						<div class="header-search">
+							<form action="" method="POST">
+								<select class="input-select">
+									<option value="0">All Categories</option>
+									<?php
+									$query = mysqli_query($koneksi, "SELECT * FROM kategori ORDER BY id_kategori ");
+									while ($r = mysqli_fetch_object($query)) {
+										echo "<option value='$r->id_kategori'>$r->nama_kategori</option>";
+									} ?>
 
-						<a href="admin/index.php" class="flex-c-m trans-04 p-lr-25">
-							My Account
-						</a>
-
-						<!-- <a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a> -->
+								</select>
+								<input type="text" name="cari" class="input" placeholder="Search here">
+								<button type="submit" name="submit" class="search-btn">Search</button>
+							</form>
+						</div>
 					</div>
-				</div>
-			</div>
+					<!-- /SEARCH BAR -->
 
-			<div class="wrap-menu-desktop how-shadow1">
-				<nav class="limiter-menu-desktop container">
+					<!-- ACCOUNT -->
+					<div class="col-md-3 clearfix">
+						<div class="header-ctn">
 
-					<!-- Logo desktop -->
-					<a href="#" class="logo">
-						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
-					</a>
+							<div>
+								<!--  -->
+								<a href="admin/login.php">
+									<i class="fa fa-user-o"></i>
+									<span>Login</span>
+								</a>
+							</div>
 
-					<!-- Menu desktop -->
-					<div class="menu-desktop">
-						<ul class="main-menu">
-							<li>
-								<a href="?m=home">Home</a>
-							</li>
+							<!-- Menu Toogle -->
+							<div class="menu-toggle">
+								<a href="#">
+									<i class="fa fa-bars"></i>
+									<span>Menu</span>
+								</a>
+							</div>
 
-							<li class="active-menu">
-								<a href="?m=product">Product</a>
-							</li>
 
-							<li>
-								<a href="?m=about">About</a>
-							</li>
-
-							<li>
-								<a href="contact.html">Contact</a>
-							</li>
-
-							<li>
-								<a href="blog.html">Blog</a>
-							</li>
-
-						</ul>
-					</div>
-
-					<!-- Icon header -->
-					<div class="wrap-icon-header flex-w flex-r-m">
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
-							<i class="zmdi zmdi-search"></i>
+							<!-- /Menu Toogle -->
 						</div>
 
-						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
-							<i class="zmdi zmdi-shopping-cart"></i>
-						</div>
-
-						<!-- <a href="admin/index.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-							<i class="zmdi zmdi-account"></i>
-						</a> -->
 					</div>
-				</nav>
-			</div>
-		</div>
-
-		<!-- Header Mobile -->
-		<div class="wrap-header-mobile">
-			<!-- Logo moblie -->
-			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
-			</div>
-
-			<!-- Icon header -->
-			<div class="wrap-icon-header flex-w flex-r-m m-r-15">
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 js-show-modal-search">
-					<i class="zmdi zmdi-search"></i>
+					<!-- /ACCOUNT -->
 				</div>
-
-				<div class="icon-header-item cl2 hov-cl1 trans-04 p-r-11 p-l-10 icon-header-noti js-show-cart" data-notify="2">
-					<i class="zmdi zmdi-shopping-cart"></i>
-				</div>
-
-				<a href="admin/index.php" class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
-					<i class="zmdi zmdi-account"></i>
-				</a>
+				<!-- row -->
 			</div>
 
-			<!-- Button show menu -->
-			<div class="btn-show-menu-mobile hamburger hamburger--squeeze">
-				<span class="hamburger-box">
-					<span class="hamburger-inner"></span>
-				</span>
-			</div>
+			<!-- container -->
 		</div>
-
-
-		<!-- Menu Mobile -->
-		<div class="menu-mobile">
-			<ul class="main-menu-m">
-				<li>
-					<a href="?m=home">Home</a>
-
-				</li>
-
-				<li>
-					<a href="?m=product">Product</a>
-				</li>
-
-				<li>
-					<a href="?m=about">About</a>
-				</li>
-
-				<li>
-					<a href="contact.html">Contact</a>
-				</li>
-
-				<li>
-					<a href="blog.html">Blog</a>
-				</li>
-			</ul>
-		</div>
-
-		<!-- Modal Search -->
-		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search">
-			<div class="container-search-header">
-				<button class="flex-c-m btn-hide-modal-search trans-04 js-hide-modal-search">
-					<img src="images/icons/icon-close2.png" alt="CLOSE">
-				</button>
-
-				<form class="wrap-search-header flex-w p-l-15">
-					<button class="flex-c-m trans-04">
-						<i class="zmdi zmdi-search"></i>
-					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
-				</form>
-			</div>
-		</div>
-
-
+		<!-- /MAIN HEADER -->
 	</header>
+	<!-- /HEADER -->
 
-	<div class="wrap-header-cart js-panel-cart">
-		<div class="s-full js-hide-cart"></div>
-
-		<div class="header-cart flex-col-l p-l-65 p-r-25">
-			<div class="header-cart-title flex-w flex-sb-m p-b-8">
-				<span class="mtext-103 cl2">
-					Your Cart
-				</span>
-
-				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart">
-					<i class="zmdi zmdi-close"></i>
-				</div>
-			</div>
-
-			<div class="header-cart-content flex-w js-pscroll">
-				<ul class="header-cart-wrapitem w-full">
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-01.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								White Shirt Pleat
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $19.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-02.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Converse All Star
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $39.00
-							</span>
-						</div>
-					</li>
-
-					<li class="header-cart-item flex-w flex-t m-b-12">
-						<div class="header-cart-item-img">
-							<img src="images/item-cart-03.jpg" alt="IMG">
-						</div>
-
-						<div class="header-cart-item-txt p-t-8">
-							<a href="#" class="header-cart-item-name m-b-18 hov-cl1 trans-04">
-								Nixon Porter Leather
-							</a>
-
-							<span class="header-cart-item-info">
-								1 x $17.00
-							</span>
-						</div>
-					</li>
+	<!-- NAVIGATION -->
+	<nav id="navigation">
+		<!-- container -->
+		<div class="container">
+			<!-- responsive-nav -->
+			<div id="responsive-nav">
+				<!-- NAV -->
+				<ul class="main-nav nav">
+					<li><a href="?m=home">Home</a></li>
+					<li><a href="?m=produk">Product</a></li>
+					<li><a href="#">About</a></li>
 				</ul>
-
-				<div class="w-full">
-					<div class="header-cart-total w-full p-tb-40">
-						Total: $75.00
-					</div>
-
-					<div class="header-cart-buttons flex-w w-full">
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
-							View Cart
-						</a>
-
-						<a href="shoping-cart.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
-							Check Out
-						</a>
-					</div>
-				</div>
+				<!-- /NAV -->
 			</div>
+			<!-- /responsive-nav -->
 		</div>
-	</div>
+		<!-- /container -->
+	</nav>
+	<!-- /NAVIGATION -->
 
 
-	<!-- Konten -->
-
+	<!-- SECTION -->
 	<div class="content">
+		<!-- container -->
 		<?php
 		$mod = $_GET['m'];
-		if ($mod == 'product') {
-			include 'product.php';
-		} else if ($mod == 'product-detail') {
-			include 'product-detail.php';
+		if ($mod == 'produk') {
+			include 'produk.php';
+		} else if ($mod == 'produk_detail') {
+			include 'produk_detail.php';
 		} else if ($mod == 'about') {
 			include 'about.php';
 		} else {
 			include 'home.php';
 		}
 		?>
+
+		<!-- /container -->
 	</div>
+	<!-- /SECTION -->
+	<!-- </div> -->
+
+	<!-- FOOTER -->
+	<footer id="footer">
+		<!-- top footer -->
+		<div class="section">
+			<!-- container -->
+			<div class="container">
+				<!-- row -->
+				<div class="row">
 
 
+					<div class="col-md-4 col-xs-12">
+						<div class="footer">
+							<h3 class="footer-title">Contact Us</h3>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
+							<ul class="footer-links">
+								<li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
+								<li><a href="#"><i class="fa fa-phone"></i>+021-95-51-84</a></li>
+								<li><a href="#"><i class="fa fa-envelope-o"></i>email@email.com</a></li>
+							</ul>
+						</div>
+					</div>
 
+					<div class="clearfix visible-xs"></div>
 
-	<!-- Footer -->
-	<footer class="bg3 p-t-75 p-b-32">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Categories
-					</h4>
+					<div class="col-md-4 col-xs-12">
+						<div class="footer">
+							<h3 class="footer-title">Information</h3>
+							<ul class="footer-links">
+								<li><a href="#">About Us</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Privacy Policy</a></li>
+								<li><a href="#">Orders and Returns</a></li>
+								<li><a href="#">Terms & Conditions</a></li>
+							</ul>
+						</div>
+					</div>
 
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
-							</a>
-						</li>
+					<div class="clearfix visible-xs"></div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
-							</a>
-						</li>
+					<div class="col-md-4 col-xs-12">
+						<div class="footer">
+							<h3 class="footer-title">Service</h3>
+							<ul class="footer-links">
+								<li><a href="#">My Account</a></li>
+								<li><a href="#">View Cart</a></li>
+								<li><a href="#">Wishlist</a></li>
+								<li><a href="#">Track My Order</a></li>
+								<li><a href="#">Help</a></li>
+							</ul>
+						</div>
+					</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
-							</a>
-						</li>
+					<div class="col-md-12">
+						<div class="newsletter">
+							<ul class="newsletter-follow">
+								<li>
+									<a href="#"><i class="fa fa-facebook"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-twitter"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-instagram"></i></a>
+								</li>
+								<li>
+									<a href="#"><i class="fa fa-pinterest"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
-					</ul>
 				</div>
+				<!-- /row -->
+			</div>
+			<!-- /container -->
+		</div>
+		<!-- /top footer -->
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Help
-					</h4>
-
-					<ul>
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Track Order
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Returns
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shipping
-							</a>
-						</li>
-
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								FAQs
-							</a>
-						</li>
-					</ul>
-				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						GET IN TOUCH
-					</h4>
-
-					<p class="stext-107 cl7 size-201">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
-
-					<div class="p-t-27">
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-instagram"></i>
-						</a>
-
-						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
-						</a>
+		<!-- bottom footer -->
+		<div id="bottom-footer" class="section">
+			<div class="container">
+				<!-- row -->
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<span class="copyright">
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+							Copyright & copy; <script script script>
+								document.write(new Date().getFullYear());
+							</script> All rights reserved
+							<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						</span>
 					</div>
 				</div>
-
-				<div class="col-sm-6 col-lg-3 p-b-50">
-					<h4 class="stext-301 cl0 p-b-30">
-						Newsletter
-					</h4>
-
-					<form>
-						<div class="wrap-input1 w-full p-b-4">
-							<input class="input1 bg-none plh1 stext-107 cl7" type="text" name="email" placeholder="email@example.com">
-							<div class="focus-input1 trans-04"></div>
-						</div>
-
-						<div class="p-t-18">
-							<button class="flex-c-m stext-101 cl0 size-103 bg1 bor1 hov-btn2 p-lr-15 trans-04">
-								Subscribe
-							</button>
-						</div>
-					</form>
-				</div>
+				<!-- /row -->
 			</div>
-
-			<div class="p-t-40">
-				<div class="flex-c-m flex-w p-b-18">
-
-					<p class="stext-107 cl6 txt-center">
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						Copyright &copy;<script>
-							document.write(new Date().getFullYear());
-						</script> All rights reserved
-						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-
-					</p>
-				</div>
-			</div>
+			<!-- /container -->
+		</div>
+		<!-- /bottom footer -->
 	</footer>
+	<!-- /FOOTER -->
 
+	<!-- jQuery Plugins -->
 
-	<!-- Back to top -->
-	<div class="btn-back-to-top" id="myBtn">
-		<span class="symbol-btn-back-to-top">
-			<i class="zmdi zmdi-chevron-up"></i>
-		</span>
-	</div>
-
-	<!-- Modal1 -->
-
-
-	<!--===============================================================================================-->
-	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/animsition/js/animsition.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/bootstrap/js/popper.js"></script>
-	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/select2/select2.min.js"></script>
-	<script>
-		$(".js-select2").each(function() {
-			$(this).select2({
-				minimumResultsForSearch: 20,
-				dropdownParent: $(this).next('.dropDownSelect2')
-			});
-		})
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendor/daterangepicker/moment.min.js"></script>
-	<script src="vendor/daterangepicker/daterangepicker.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/slick/slick.min.js"></script>
-	<script src="js/slick-custom.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/parallax100/parallax100.js"></script>
-	<script>
-		$('.parallax100').parallax100();
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-	<script>
-		$('.gallery-lb').each(function() { // the containers for all your galleries
-			$(this).magnificPopup({
-				delegate: 'a', // the selector for gallery item
-				type: 'image',
-				gallery: {
-					enabled: true
-				},
-				mainClass: 'mfp-fade'
-			});
-		});
-	</script>
-	<!--===============================================================================================-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-	<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-	<!--===============================================================================================-->
-	<script src="vendor/sweetalert/sweetalert.min.js"></script>
-	<script>
-		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
-			e.preventDefault();
-		});
-
-		$('.js-addwish-b2').each(function() {
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function() {
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
-
-		$('.js-addwish-detail').each(function() {
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-			$(this).on('click', function() {
-				swal(nameProduct, "is added to wishlist !", "success");
-
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
-
-		/*---------------------------------------------*/
-
-		$('.js-addcart-detail').each(function() {
-			var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-			$(this).on('click', function() {
-				swal(nameProduct, "is added to cart !", "success");
-			});
-		});
-	</script>
-	<!--===============================================================================================-->
-	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-	<script>
-		$('.js-pscroll').each(function() {
-			$(this).css('position', 'relative');
-			$(this).css('overflow', 'hidden');
-			var ps = new PerfectScrollbar(this, {
-				wheelSpeed: 1,
-				scrollingThreshold: 1000,
-				wheelPropagation: false,
-			});
-
-			$(window).on('resize', function() {
-				ps.update();
-			})
-		});
-	</script>
-	<!--===============================================================================================-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/slick.min.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/jquery.zoom.min.js"></script>
 	<script src="js/main.js"></script>
 
 </body>

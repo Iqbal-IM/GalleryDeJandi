@@ -32,7 +32,7 @@
                         <td><?= $row->nama_kategori; ?></td>
                         <td>
                             <a class='btn btn-warning' href='?m=kategori_ubah&id_kategori=<?= $row->id_kategori ?>'>Ubah</a>
-                            <a class='btn btn-danger' href='aksi.php?act=kategori_hapus&id_kategori=<?= $row->id_pid_kategori ?>' onclick="return confirm('Hapus Data Produk ?')">Hapus</a>
+                            <a class='btn btn-danger' href='aksi.php?act=kategori_hapus&id_kategori=<?= $row->id_pid_kategori ?>' onclick="return confirm('Hapus Data Kategori ?')">Hapus</a>
 
                         </td>
                     </tr>
