@@ -83,7 +83,7 @@ if ($_SESSION['login'] == '') {
                     include 'register.php';
                 }
             } else {
-                include 'home.php';
+                include 'produk.php';
             }
             ?>
         </div>

@@ -35,12 +35,12 @@ $row = mysqli_fetch_object($query);
 
                     <div class="form-group">
                         <label>Harga (Rp.)</label>
-                        <input type="number" class="form-control" name="harga" value="<?php echo $row->harga ?>">
+                        <input type="number" class="form-control" name="harga" value="<?= $row->harga ?>">
                     </div>
 
                     <div class="form-group">
-                        <img class="preview" src="../asset/foto-produk/<?php echo $row->gambar ?>" style="height:120px; width:120px;" />
-                        <a href="aksi.php?act=hapus_foto&id_produk=<?php echo $row->id_produk ?>">Hapus Gambar</a>
+                        <img class="preview" src="../asset/foto-produk/<?= $row->gambar ?>" style="height:120px; width:120px;" />
+                        <!-- <a href="aksi.php?act=hapus_foto&id_produk=<?= $row->id_produk ?>">Hapus Gambar</a> -->
                     </div>
                     <div class="form-group">
                         <label>Ganti Gambar</label>
@@ -49,7 +49,7 @@ $row = mysqli_fetch_object($query);
 
                     <div class="form-group">
                         <label>Deskripsi</label>
-                        <textarea class="form-control" name="deskripsi" rows="5"><?php echo $row->deskripsi ?></textarea>
+                        <textarea class="form-control" name="deskripsi" rows="5"><?= $row->deskripsi ?></textarea>
                     </div>
                     </br>
                     <button class="btn btn-success" name="save">Simpan</button>
