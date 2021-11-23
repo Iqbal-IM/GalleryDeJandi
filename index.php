@@ -40,8 +40,21 @@ include 'admin/koneksi.php';
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
 	<!--===============================================================================================-->
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$("#kategori").change(function() {
+				$.post("filter.php", {
+						channel: $(this).val()
+					})
+					.success(function(data) {
+
+						$(".result").html(data);
+					});
+			});
+		});
+	</script>
 </head>
 
 <body class="animisition">
@@ -58,21 +71,11 @@ include 'admin/koneksi.php';
 					</div>
 
 					<div class="right-top-bar flex-w h-full">
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							Help & FAQs
-						</a>
 
 						<a href="admin/index.php" class="flex-c-m trans-04 p-lr-25">
 							My Account
 						</a>
 
-						<!-- <a href="#" class="flex-c-m trans-04 p-lr-25">
-							EN
-						</a>
-
-						<a href="#" class="flex-c-m trans-04 p-lr-25">
-							USD
-						</a> -->
 					</div>
 				</div>
 			</div>
@@ -81,7 +84,7 @@ include 'admin/koneksi.php';
 				<nav class="limiter-menu-desktop container">
 
 					<!-- Logo desktop -->
-					<a href="#" class="logo">
+					<a href="index.php" class="logo">
 						<img src="images/icons/logo-01.png" alt="IMG-LOGO">
 					</a>
 
@@ -101,7 +104,7 @@ include 'admin/koneksi.php';
 							</li>
 
 							<li>
-								<a href="contact.html">Contact</a>
+								<a href="?m=contact">Contact</a>
 							</li>
 
 							<li>
@@ -113,9 +116,12 @@ include 'admin/koneksi.php';
 
 					<!-- Icon header -->
 					<div class="wrap-icon-header flex-w flex-r-m">
+
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search">
 							<i class="zmdi zmdi-search"></i>
 						</div>
+						<div style="clear:both"></div>
+
 
 						<div class="icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11 icon-header-noti js-show-cart" data-notify="2">
 							<i class="zmdi zmdi-shopping-cart"></i>
@@ -133,7 +139,7 @@ include 'admin/koneksi.php';
 		<div class="wrap-header-mobile">
 			<!-- Logo moblie -->
 			<div class="logo-mobile">
-				<a href="index.html"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
+				<a href="index.php"><img src="images/icons/logo-01.png" alt="IMG-LOGO"></a>
 			</div>
 
 			<!-- Icon header -->
@@ -177,7 +183,7 @@ include 'admin/koneksi.php';
 				</li>
 
 				<li>
-					<a href="contact.html">Contact</a>
+					<a href="?m=contact">Contact</a>
 				</li>
 
 				<li>
@@ -197,7 +203,8 @@ include 'admin/koneksi.php';
 					<button class="flex-c-m trans-04">
 						<i class="zmdi zmdi-search"></i>
 					</button>
-					<input class="plh3" type="text" name="search" placeholder="Search...">
+					<input type="hidden" name="m" value="product" />
+					<input class="plh3" type="text" value="<?php echo $_GET['q'] ?>" name="q" autocomplete="off" placeholder="Search...">
 				</form>
 			</div>
 		</div>
@@ -301,20 +308,19 @@ include 'admin/koneksi.php';
 			include 'product-detail.php';
 		} else if ($mod == 'about') {
 			include 'about.php';
+		} else if ($mod == 'contact') {
+			include 'contact.php';
 		} else {
 			include 'home.php';
 		}
 		?>
 	</div>
 
-
-
-
 	<!-- Footer -->
 	<footer class="bg3 p-t-75 p-b-32">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-12 col-lg-4 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						Categories
 					</h4>
@@ -322,31 +328,26 @@ include 'admin/koneksi.php';
 					<ul>
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Women
+								Tenun
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Men
+								Fashion
 							</a>
 						</li>
 
 						<li class="p-b-10">
 							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Shoes
+								Accessories
 							</a>
 						</li>
 
-						<li class="p-b-10">
-							<a href="#" class="stext-107 cl7 hov-cl1 trans-04">
-								Watches
-							</a>
-						</li>
 					</ul>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-12 col-lg-4 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						Help
 					</h4>
@@ -378,7 +379,7 @@ include 'admin/koneksi.php';
 					</ul>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<div class="col-12 col-lg-4 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						GET IN TOUCH
 					</h4>
@@ -397,12 +398,16 @@ include 'admin/koneksi.php';
 						</a>
 
 						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
-							<i class="fa fa-pinterest-p"></i>
+							<i class="fa fa-whatsapp"></i>
+						</a>
+
+						<a href="#" class="fs-18 cl7 hov-cl1 trans-04 m-r-16">
+							<i class="fa fa-envelope"></i>
 						</a>
 					</div>
 				</div>
 
-				<div class="col-sm-6 col-lg-3 p-b-50">
+				<!-- <div class="col-sm-6 col-lg-3 p-b-50">
 					<h4 class="stext-301 cl0 p-b-30">
 						Newsletter
 					</h4>
@@ -419,7 +424,7 @@ include 'admin/koneksi.php';
 							</button>
 						</div>
 					</form>
-				</div>
+				</div> -->
 			</div>
 
 			<div class="p-t-40">
@@ -429,13 +434,24 @@ include 'admin/koneksi.php';
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						Copyright &copy;<script>
 							document.write(new Date().getFullYear());
-						</script> All rights reserved
+						</script> All rights reserved | Made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a> &amp; distributed by <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 
 					</p>
 				</div>
 			</div>
 	</footer>
+
+
+	<!-- Button Whatsapp -->
+
+	<div style="position:fixed;right:20px;bottom:60px;">
+
+		<a href="https://api.whatsapp.com/send?phone=6285333437902">
+			<img src="https://hantamo.com/free/whatsapp.svg" class="wa-btn" alt="Whatsapp-Button" height="50" />
+		</a>
+
+	</div>
 
 
 	<!-- Back to top -->
@@ -445,7 +461,6 @@ include 'admin/koneksi.php';
 		</span>
 	</div>
 
-	<!-- Modal1 -->
 
 
 	<!--===============================================================================================-->
@@ -496,30 +511,30 @@ include 'admin/koneksi.php';
 	<!--===============================================================================================-->
 	<script src="vendor/sweetalert/sweetalert.min.js"></script>
 	<script>
-		$('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
-			e.preventDefault();
-		});
+		// $('.js-addwish-b2, .js-addwish-detail').on('click', function(e) {
+		// 	e.preventDefault();
+		// });
 
-		$('.js-addwish-b2').each(function() {
-			var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-			$(this).on('click', function() {
-				swal(nameProduct, "is added to wishlist !", "success");
+		// $('.js-addwish-b2').each(function() {
+		// 	var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
+		// 	$(this).on('click', function() {
+		// 		swal(nameProduct, "is added to wishlist !", "success");
 
-				$(this).addClass('js-addedwish-b2');
-				$(this).off('click');
-			});
-		});
+		// 		$(this).addClass('js-addedwish-b2');
+		// 		$(this).off('click');
+		// 	});
+		// });
 
-		$('.js-addwish-detail').each(function() {
-			var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
+		// $('.js-addwish-detail').each(function() {
+		// 	var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
 
-			$(this).on('click', function() {
-				swal(nameProduct, "is added to wishlist !", "success");
+		// 	$(this).on('click', function() {
+		// 		swal(nameProduct, "is added to wishlist !", "success");
 
-				$(this).addClass('js-addedwish-detail');
-				$(this).off('click');
-			});
-		});
+		// 		$(this).addClass('js-addedwish-detail');
+		// 		$(this).off('click');
+		// 	});
+		// });
 
 		/*---------------------------------------------*/
 

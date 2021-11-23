@@ -12,9 +12,14 @@ $row = mysqli_fetch_object($query);
 		</a>
 
 		<a href="?m=product" class="stext-109 cl8 hov-cl1 trans-04">
-			<?= $row->nama_kategori ?>
+			Product
 			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 		</a>
+
+		<span class="stext-109">
+			<?= $row->nama_kategori ?>
+			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+		</span>
 
 		<span class="stext-109 cl4">
 			<?= $row->nama_produk ?>
@@ -44,6 +49,16 @@ $row = mysqli_fetch_object($query);
 								</div>
 							</div>
 
+							<!-- <div class="item-slick3" data-thumb="asset/foto-produk/<?= $row->gambar ?>">
+								<div class="wrap-pic-d pos-relative">
+									<img src="asset/foto-produk/<?= $row->gambar ?>" alt="IMG-PRODUCT">
+
+									<a class="flex-c-m size-108 how-pos1 bor0 fs-16 cl10 bg0 hov-btn3 trans-04" href="asset/foto-produk/<?= $row->gambar ?>">
+										<i class="fa fa-expand"></i>
+									</a>
+								</div>
+							</div> -->
+
 							<div class="item-slick3" data-thumb="images/product-detail-02.jpg">
 								<div class="wrap-pic-w pos-relative">
 									<img src="images/product-detail-02.jpg" alt="IMG-PRODUCT">
@@ -71,15 +86,15 @@ $row = mysqli_fetch_object($query);
 			<div class="col-md-6 col-lg-5 p-b-30">
 				<div class="p-r-50 p-t-5 p-lr-0-lg">
 					<h4 class="mtext-105 cl2 js-name-detail p-b-14">
-						<!-- Lightweight Jacket --><?= $row->nama_produk ?>
+						<?= $row->nama_produk ?>
 					</h4>
 
 					<span class="mtext-106 cl2">
-						<!-- $58.79 -->Rp. <?= number_format($row->harga) ?>
+						Rp. <?= number_format($row->harga) ?>
 					</span>
 
 					<p class="stext-102 cl3 p-t-23">
-						<!-- Nulla eget sem vitae eros pharetra viverra. Nam vitae luctus ligula. Mauris consequat ornare feugiat. --><?= $row->deskripsi ?>
+						<?= $row->deskripsi ?>
 					</p>
 
 					<!--  -->
@@ -371,16 +386,17 @@ $row = mysqli_fetch_object($query);
 
 		<!-- Slide2 -->
 		<div class="wrap-slick2">
-			<div class="col-12 col-md-3 col-lg slick2">
+			<div class="slick2">
 				<?php
 				$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori");
 				while ($row = mysqli_fetch_object($query)) { ?>
 					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
 						<!-- Block2 -->
 						<div class="block2">
-							<div class="block2-slick hov-img0">
-								<img src="asset/foto-produk/<?= $row->gambar ?>" alt="IMG-PRODUCT">
-
+							<div id="blk2" class="block2-pic hov-img0">
+								<a href="?m=product-detail&id_produk=<?= $row->id_produk ?>">
+									<img src="asset/foto-produk/<?= $row->gambar ?>" alt="IMG-PRODUCT">
+								</a>
 								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
 									Quick View
 								</a>
@@ -388,7 +404,7 @@ $row = mysqli_fetch_object($query);
 
 							<div class="block2-txt flex-w flex-t p-t-14">
 								<div class="block2-txt-child1 flex-col-l ">
-									<a href="product-detail.html" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
+									<a href="?m=product-detail&id_produk=<?= $row->id_produk ?>" class="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
 										<?= $row->nama_produk ?>
 									</a>
 

@@ -17,6 +17,7 @@ if ($action == 'produk_tambah') {
     header("location:index.php?m=produk");
 
     // Ubah Produk
+
 } else if ($action == 'produk_ubah') {
     $nama = $_POST['nama_produk'];
     $id_kategori = $_POST['id_kategori'];
@@ -51,6 +52,7 @@ if ($action == 'produk_tambah') {
     header("location:index.php?m=produk");
 
     // Hapus Produk
+
 } else if ($action == 'produk_hapus') {
 
     $query = mysqli_query($koneksi, "SELECT * FROM produk WHERE id_produk='$_GET[id_produk]'");
@@ -66,23 +68,26 @@ if ($action == 'produk_tambah') {
     header("location:index.php?m=produk");
 
     // Tambah Kategori
-} else if ($action == 'kategori_tambah') {
-    $nama_kategori = $_POST['nama'];
 
-    mysqli_query($koneksi, "INSERT INTO produk (nama_kategori)
+} else if ($action == 'kategori_tambah') {
+    $nama_kategori = $_POST['nama_kategori'];
+
+    mysqli_query($koneksi, "INSERT INTO kategori (nama_kategori)
 	VALUES ('$nama_kategori')");
 
     header("location:index.php?m=kategori");
 
     // Ubah Kategori
+
 } else if ($action == 'kategori_ubah') {
-    $nama_kategori = $_POST['nama'];
+    $nama_kategori = $_POST['nama_kategori'];
 
     mysqli_query($koneksi, "UPDATE kategori SET nama_kategori='$nama_kategori' WHERE id_kategori='$_GET[id_kategori]'");
 
     header("location:index.php?m=kategori");
 
     // Hapus Kategori
+
 } else if ($action == 'kategori_hapus') {
     $nama_kategori = $_POST['nama_kategori'];
 
@@ -92,6 +97,7 @@ if ($action == 'produk_tambah') {
     header("location:index.php?m=kategori");
 
     // Login
+
 } else if ($action == 'login') {
     $email = $_POST['user'];
     $password = $_POST['pass'];
@@ -101,10 +107,10 @@ if ($action == 'produk_tambah') {
     $query = mysqli_query($koneksi, "SELECT * FROM admin WHERE user='$_POST[user]'");
     $data = mysqli_fetch_assoc($query);
     if (is_null($data)) {
-        echo "<script>alert('Email yang anda masukkan tidak Terdaftar');window.location='login.php'</script>";
+        echo "<script>alert('Email yang anda masukkan tidak Terdaftar!');window.location='login.php'</script>";
     } else if ($data['pass'] != $passwordhash) {
 
-        echo "<script>alert('Password yang Anda Masukkan Salah');window.location='login.php'</script>";
+        echo "<script>alert('Password yang Anda Masukkan Salah!');window.location='login.php'</script>";
     } else {
 
         $_SESSION['login'] = $data;
@@ -112,6 +118,7 @@ if ($action == 'produk_tambah') {
     }
 
     // Register
+
 } else if ($action == 'register') {
     $nama = $_POST['nama'];
     $user = $_POST['email'];
@@ -125,6 +132,7 @@ if ($action == 'produk_tambah') {
     header("location: index.php?m=produk");
 
     // Logout
+
 } else if ($action == 'logout') {
     unset($_SESSION['login']);
     header("location:login.php");
