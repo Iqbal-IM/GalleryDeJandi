@@ -180,44 +180,6 @@ $row = mysqli_fetch_object($query);
 							</div>
 						</div>
 
-						<!-- <div class="flex-w flex-r-m p-b-10">
-							<div class="size-203 flex-c-m respon6">
-								Size
-							</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="time">
-										<option>Choose an option</option>
-										<option>Size S</option>
-										<option>Size M</option>
-										<option>Size L</option>
-										<option>Size XL</option>
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div>
-
-						<div class="flex-w flex-r-m p-b-10">
-							<div class="size-203 flex-c-m respon6">
-								Color
-							</div>
-
-							<div class="size-204 respon6-next">
-								<div class="rs1-select2 bor8 bg0">
-									<select class="js-select2" name="time">
-										<option>Choose an option</option>
-										<option>Red</option>
-										<option>Blue</option>
-										<option>White</option>
-										<option>Grey</option>
-									</select>
-									<div class="dropDownSelect2"></div>
-								</div>
-							</div>
-						</div> -->
-
 						<div class="flex-w flex-r-m p-b-10 p-t-20">
 							<div class="size-204 flex-w flex-m respon6-next">
 
@@ -257,94 +219,7 @@ $row = mysqli_fetch_object($query);
 			</div>
 		</div>
 
-		<div class="bor10 m-t-50 p-t-43 p-b-40">
-			<!-- Tab01 -->
-			<div class="tab01">
-				<!-- Nav tabs -->
-				<ul class="nav nav-tabs" role="tablist">
-					<li class="nav-item p-b-10">
-						<a class="nav-link active" data-toggle="tab" href="#description" role="tab">Description</a>
-					</li>
 
-					<li class="nav-item p-b-10">
-						<a class="nav-link" data-toggle="tab" href="#information" role="tab">Additional information</a>
-					</li>
-
-				</ul>
-
-				<!-- Tab panes -->
-				<div class="tab-content p-t-43">
-					<!-- - -->
-					<div class="tab-pane fade show active" id="description" role="tabpanel">
-						<div class="how-pos2 p-lr-15-md">
-							<p class="stext-102 cl6">
-								<?= $row->deskripsi ?>
-							</p>
-						</div>
-					</div>
-
-					<!-- - -->
-					<div class="tab-pane fade" id="information" role="tabpanel">
-						<div class="row">
-							<div class="col-sm-10 col-md-8 col-lg-6 m-lr-auto">
-								<ul class="p-lr-28 p-lr-15-sm">
-									<li class="flex-w flex-t p-b-7">
-										<span class="stext-102 cl3 size-205">
-											Weight
-										</span>
-
-										<span class="stext-102 cl6 size-206">
-											0.79 kg
-										</span>
-									</li>
-
-									<li class="flex-w flex-t p-b-7">
-										<span class="stext-102 cl3 size-205">
-											Dimensions
-										</span>
-
-										<span class="stext-102 cl6 size-206">
-											110 x 33 x 100 cm
-										</span>
-									</li>
-
-									<li class="flex-w flex-t p-b-7">
-										<span class="stext-102 cl3 size-205">
-											Materials
-										</span>
-
-										<span class="stext-102 cl6 size-206">
-											60% cotton
-										</span>
-									</li>
-
-									<li class="flex-w flex-t p-b-7">
-										<span class="stext-102 cl3 size-205">
-											Color
-										</span>
-
-										<span class="stext-102 cl6 size-206">
-											Black, Blue, Grey, Green, Red, White
-										</span>
-									</li>
-
-									<li class="flex-w flex-t p-b-7">
-										<span class="stext-102 cl3 size-205">
-											Size
-										</span>
-
-										<span class="stext-102 cl6 size-206">
-											XL, L, M, S
-										</span>
-									</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</div>
 	</div>
 
 	<div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
