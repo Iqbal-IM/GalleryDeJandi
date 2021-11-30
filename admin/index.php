@@ -3,19 +3,18 @@ include 'koneksi.php';
 if ($_SESSION['login'] == '') {
     header("location:login.php");
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <title>Gallery De Jandy - Dashboard</title>
 
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>Gallery De Jandy - Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -31,7 +30,6 @@ if ($_SESSION['login'] == '') {
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
         <!-- Sidebar -->
         <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
 
@@ -40,7 +38,7 @@ if ($_SESSION['login'] == '') {
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-sun"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Gallery De Jandy</div>
+                <div class="sidebar-brand-text mx-3">Gallery De' Jandi</div>
             </a>
 
             <!-- Divider -->
@@ -48,7 +46,7 @@ if ($_SESSION['login'] == '') {
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.php">
+                <a class="nav-link" href="?m=home">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -82,7 +80,13 @@ if ($_SESSION['login'] == '') {
                 Addons
             </div>
 
-            <!-- Nav Item - Tables -->
+            <li class="nav-item">
+                <a class="nav-link" href="?m=seo">
+                    <i class="fas fa-star"></i>
+                    <span>SEO</span></a>
+            </li>
+
+            <!-- Nav Item - Landing Page -->
             <li class="nav-item">
                 <a class="nav-link" href="http://localhost/GalleryDeJandi/">
                     <i class="fas fa-rocket"></i>
@@ -114,6 +118,9 @@ if ($_SESSION['login'] == '') {
                         <i class="fa fa-bars"></i>
                     </button>
 
+                    <!-- <marquee behavior="scroll" direction="left">
+                        <h3 style="color: dodgerblue;">Selamat Datang di Halaman Admin Gallery De' Jandy</h3>
+                    </marquee> -->
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -123,7 +130,9 @@ if ($_SESSION['login'] == '') {
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
+                                    Admin
+                                </span>
                                 <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -132,12 +141,12 @@ if ($_SESSION['login'] == '') {
                                     <i class="fas fa-user-plus fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Register
                                 </a>
-                                <a class="dropdown-item" href="#">
+                                <a class="dropdown-item" href="?m=password">
                                     <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Change Password
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="aksi.php?act=logout" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -169,9 +178,15 @@ if ($_SESSION['login'] == '') {
                             include 'kategori_ubah.php';
                         } else if ($_GET['m'] == 'register') {
                             include 'register.php';
+                        } else if ($_GET['m'] == 'password') {
+                            include 'password.php';
+                        } else if ($_GET['m'] == 'seo') {
+                            include 'seo.php';
+                        } else if ($_GET['m'] == 'home') {
+                            include 'home.php';
                         }
                     } else {
-                        include 'home.php';
+                        include 'produk.php';
                     }
                     ?>
 

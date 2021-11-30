@@ -1,11 +1,14 @@
-<!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Kategori</h1>
+<?php
 
+require_once("session.php");
+
+
+?>
 
 <!-- DataTales Example -->
-<div class="card shadow mb-4">
+<div class="card shadow mb-4 mt-5">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Kategori</h6>
+        <h3 class="m-0 font-weight-bold text-primary">Kategori</h3>
     </div>
     <div class="card-body">
         <div class="section">
@@ -31,8 +34,8 @@
                             <td><?= $a; ?></td>
                             <td><?= $row->nama_kategori; ?></td>
                             <td>
-                                <a class='btn btn-warning' href='?m=kategori_ubah&id_kategori=<?= $row->id_kategori ?>'><i class="fa fa-pen-fancy"></i></a>
-                                <a class='btn btn-danger' href='aksi.php?act=kategori_hapus&id_kategori=<?= $row->id_kategori ?>' onclick="return confirm('Hapus Data Produk ?')"><i class="fa fa-trash"></i></a>
+                                <a class='btn btn-sm btn-warning' href='?m=kategori_ubah&id_kategori=<?= $row->id_kategori ?>'><i class="fa fa-pen-fancy"></i></a>
+                                <a class='btn btn-sm btn-danger' href='aksi.php?act=kategori_hapus&id_kategori=<?= $row->id_kategori ?>' onclick="return confirm('Hapus Data Kategori?')"><i class="fa fa-trash"></i></a>
 
                             </td>
                         </tr>

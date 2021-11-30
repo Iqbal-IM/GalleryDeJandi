@@ -171,7 +171,7 @@
     [ Filter / Search product ]*/
     $('.js-show-filter').on('click',function(){
         $(this).toggleClass('show-filter');
-        $('.panel-filter').slideToggle(400);
+        $('.panel-filter').slideToggle(200);
 
         if($('.js-show-search').hasClass('show-search')) {
             $('.js-show-search').removeClass('show-search');
@@ -268,10 +268,10 @@
     
     /*==================================================================
     [ Show modal1 ]*/
-    $('.js-show-modal1').on('click',function(e){
-        e.preventDefault();
-        $('.js-modal1').addClass('show-modal1');
-    });
+    // $('.js-show-modal1').on('click',function(e){
+    //     e.preventDefault();
+    //     $('.js-modal1').addClass('show-modal1');
+    // });
 
     $('.js-hide-modal1').on('click',function(){
         $('.js-modal1').removeClass('show-modal1');

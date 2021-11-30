@@ -1,4 +1,4 @@
-<h1 class="h3 mb-4 text-gray-800">Tambah Produk</h1>
+<h1 class="h3 mb-4 text-gray-800" style="text-align: center;">Tambah Produk</h1>
 
 <div class="row d-flex justify-content-center">
   <div class="col col-8 p-4 bg-light  shadow p-3 mb-5 rounded">

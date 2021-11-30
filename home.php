@@ -77,63 +77,17 @@
 	</div>
 </section>
 
-<!-- <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
-	<div class="carousel-indicators">
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-		<button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-	</div>
-	<div class="carousel-inner">
-		<div class="carousel-item active" data-bs-interval="10000">
-			<img src="images/slide-01.jpg" class="d-block w-100" alt="...">
-			<div class="carousel-caption d-none d-md-block">
-				
-				<div class="block1-txt-child1 flex-col-l">
-					<span class="block1-name ltext-102 trans-04 p-b-8">
-						Koleksi Tenun Khas NTT
-					</span>
-
-					<span class="block1-info stext-102 trans-04">
-						
-					</span>
-				</div>
-			</div>
-		</div>
-		<div class="carousel-item" data-bs-interval="2000">
-			<img src="images/slide-02.jpg" class="d-block w-100" alt="...">
-			<div class="carousel-caption d-none d-md-block">
-				<h5>Second slide label</h5>
-				<p>Some representative placeholder content for the second slide.</p>
-			</div>
-		</div>
-		<div class="carousel-item">
-			<img src="images/slide-03.jpg" class="d-block w-100" alt="...">
-			<div class="carousel-caption d-none d-md-block">
-				<h5>Third slide label</h5>
-				<p>Some representative placeholder content for the third slide.</p>
-			</div>
-		</div>
-	</div>
-	<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="visually-hidden"></span>
-	</button>
-	<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="visually-hidden"></span>
-	</button>
-</div> -->
-
 <!-- Banner -->
 <div class="sec-banner bg0 p-t-80 p-b-50">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
 				<!-- Block1 -->
+
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-01.jpg" alt="IMG-BANNER">
 
-					<a href="?m=product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+					<a href="?m=product&id_kategori=1" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 						<div class="block1-txt-child1 flex-col-l">
 							<span class="block1-name ltext-102 trans-04 p-b-8">
 								Tenun
@@ -145,12 +99,14 @@
 						</div>
 
 						<div class="block1-txt-child2 p-b-4 trans-05">
+
 							<div class="block1-link stext-101 cl0 trans-09">
 								Shop Now
 							</div>
 						</div>
 					</a>
 				</div>
+
 			</div>
 
 			<div class="col-md-6 col-xl-4 p-b-30 m-lr-auto">
@@ -158,7 +114,7 @@
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-02.jpg" alt="IMG-BANNER">
 
-					<a href="?m=product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+					<a href="?m=product&id_kategori=2" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 						<div class="block1-txt-child1 flex-col-l">
 							<span class="block1-name ltext-102 trans-04 p-b-8">
 								Fashion
@@ -183,7 +139,7 @@
 				<div class="block1 wrap-pic-w">
 					<img src="images/banner-03.jpg" alt="IMG-BANNER">
 
-					<a href="?m=product" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
+					<a href="?m=product&id_kategori=3" class="block1-txt ab-t-l s-full flex-col-l-sb p-lr-38 p-tb-34 trans-03 respon3">
 						<div class="block1-txt-child1 flex-col-l">
 							<span class="block1-name ltext-102 trans-04 p-b-8">
 								Accessories
@@ -218,14 +174,17 @@
 		<!-- Tab01 -->
 		<div class="tab01">
 			<!-- Nav tabs -->
-			<ul class="nav nav-tabs" role="tablist">
+			<!-- <ul class="nav nav-tabs" role="tablist">
 				<li class="nav-item p-b-10">
-					<a class="nav-link active" data-toggle="tab" href="#best-seller" role="tab">Best Seller</a>
+					<a class="nav-link active" data-toggle="tab" href="?m=home&id_kategori=" role="tab">All Products</a>
 				</li>
-
-				<li class="nav-item p-b-10">
-					<a class="nav-link" data-toggle="tab" href="#featured" role="tab">Featured</a>
-				</li>
+				<?php
+				$query = mysqli_query($koneksi, "SELECT * FROM kategori WHERE id_kategori ORDER BY id_kategori");
+				while ($r = mysqli_fetch_object($query)) { ?>
+					<li class="nav-item p-b-10">
+						<a class="nav-link" data-toggle="tab" href="<?= $r->id_kategori ?>"><?= $r->nama_kategori ?></a>
+					</li>
+				<?php } ?>
 
 				<li class="nav-item p-b-10">
 					<a class="nav-link" data-toggle="tab" href="#sale" role="tab">Sale</a>
@@ -234,17 +193,19 @@
 				<li class="nav-item p-b-10">
 					<a class="nav-link" data-toggle="tab" href="#top-rate" role="tab">Top Rate</a>
 				</li>
-			</ul>
+			</ul> -->
 
 			<!-- Tab panes -->
-			<div class="tab-content p-t-50">
+			<div class="tab-content p-t-20">
 				<!-- - -->
-				<div class="tab-pane fade show active" id="best-seller" role="tabpanel">
+				<div class="tab-pane fade show active" id="<?= $r->id_kategori ?>" role="tabpanel">
 					<!-- Slide2 -->
 					<div class="wrap-slick2">
 						<div class="slick2">
 							<?php
-							$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori ORDER BY id_produk DESC LIMIT 8");
+							if ($_GET['id_kategori'])
+								$where2 .= " AND kategori.id_kategori='$_GET[id_kategori]'";
+							$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori WHERE (nama_produk LIKE '%$_GET[q]%') $where2 ORDER BY id_produk DESC");
 							while ($row = mysqli_fetch_object($query)) { ?>
 								<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15 col-12 col-lg-3">
 									<!-- Block2 -->

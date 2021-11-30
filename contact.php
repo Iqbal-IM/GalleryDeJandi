@@ -1,5 +1,5 @@
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-02.jpg');">
 	<h2 class="ltext-105 cl0 txt-center">
 		Contact
 	</h2>
@@ -39,8 +39,15 @@
 				</form>
 			</div>
 
-			<div class="size-210 bor10 flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-				<div class="flex-w w-full p-b-42">
+			<div class="size-210 bor10 flex-w flex-col-m p-lr-20 p-tb-20 p-lr-15-lg w-full-md">
+
+				<!-- Map -->
+				<div class="flex-w w-full p-b-20">
+
+					<iframe class="size-303" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.103405386414!2d119.89076861478283!3d-8.489326193896337!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2db465279efabd95%3A0xcca26e953910637b!2sGallery%20De&#39;%20Jandi!5e0!3m2!1sid!2sid!4v1638267597838!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+				</div>
+
+				<div class="flex-w w-full p-b-20">
 					<span class="fs-18 cl5 txt-center size-211">
 						<span class="lnr lnr-map-marker"></span>
 					</span>
@@ -50,13 +57,13 @@
 							Address
 						</span>
 
-						<p class="stext-115 cl6 size-213 p-t-18">
-							Coza Store Center 8th floor, 379 Hudson St, New York, NY 10018 US
+						<p class="stext-115 cl6 size-213 p-t-5">
+							Gang Kantor SAR, Cowang Dereng, Labuan Bajo, Nusa Tenggara Timur
 						</p>
 					</div>
 				</div>
 
-				<div class="flex-w w-full p-b-42">
+				<div class="flex-w w-full p-b-20">
 					<span class="fs-18 cl5 txt-center size-211">
 						<span class="lnr lnr-phone-handset"></span>
 					</span>
@@ -66,8 +73,8 @@
 							Lets Talk
 						</span>
 
-						<p class="stext-115 cl1 size-213 p-t-18">
-							+1 800 1236879
+						<p class="stext-115 cl1 size-213 p-t-5">
+							+62 812-3850-6615
 						</p>
 					</div>
 				</div>
@@ -82,8 +89,8 @@
 							Sale Support
 						</span>
 
-						<p class="stext-115 cl1 size-213 p-t-18">
-							contact@gmail.com
+						<p class="stext-115 cl1 size-213 p-t-5">
+							gallerydejandi@gmail.com
 						</p>
 					</div>
 				</div>
@@ -91,9 +98,3 @@
 		</div>
 	</div>
 </section>
-
-
-<!-- Map -->
-<div class="map">
-	<div class="size-303" id="google_map" data-map-x="40.691446" data-map-y="-73.886787" data-pin="images/icons/pin.png" data-scrollwhell="0" data-draggable="1" data-zoom="11"></div>
-</div>
