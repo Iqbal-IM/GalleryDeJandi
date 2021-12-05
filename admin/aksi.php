@@ -205,7 +205,7 @@ if ($action == 'produk_tambah') {
         $mail->SMTPDebug  = 1;
         $mail->SMTPAuth = true;
         // GMAIL username
-        $mail->Username = "iqbal.syko97@gmail.com";
+        $mail->Username = "reichskanzler97@gmail.com";
         // GMAIL password
         $mail->Password = "holocaust";
         $mail->SMTPSecure = "ssl";
