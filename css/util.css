@@ -17988,11 +17988,16 @@ iframe {
 .wrap-pic-w,
 .wrap-pic-max-w,
 .wrap-pic-h,
+.wrap-pic-b,
 .wrap-pic-max-h {
 	display: block;
 }
 
 .wrap-pic-w img {
+	width: 100%;
+}
+
+.wrap-pic-b img {
 	width: 100%;
 }
 

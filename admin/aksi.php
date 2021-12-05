@@ -7,13 +7,15 @@ if ($action == 'produk_tambah') {
     $nama = $_POST['nama_produk'];
     $id_kategori = $_POST['id_kategori'];
     $harga = $_POST['harga'];
+    $panjang = $_POST['panjang'];
+    $lebar = $_POST['lebar'];
     $gambar = $_FILES['gambar'];
     $deskripsi = $_POST['deskripsi'];
 
     move_uploaded_file($gambar['tmp_name'], '../asset/foto-produk/' . $gambar['name']);
 
-    mysqli_query($koneksi, "INSERT INTO produk (nama_produk, id_kategori, harga, gambar, deskripsi)
-	VALUES ('$nama', '$id_kategori', '$harga', '$gambar[name]','$deskripsi')") or die(mysqli_error($koneksi));
+    mysqli_query($koneksi, "INSERT INTO produk (nama_produk, id_kategori, harga, panjang, lebar, gambar, deskripsi)
+	VALUES ('$nama', '$id_kategori', '$harga', '$panjang', '$lebar', '$gambar[name]','$deskripsi')") or die(mysqli_error($koneksi));
 
     header("location:index.php?m=produk");
 
@@ -23,6 +25,8 @@ if ($action == 'produk_tambah') {
     $nama = $_POST['nama_produk'];
     $id_kategori = $_POST['id_kategori'];
     $harga = $_POST['harga'];
+    $panjang = $_POST['panjang'];
+    $lebar = $_POST['lebar'];
     $gambar = $_FILES['gambar']['name'];
     $deskripsi = $_POST['deskripsi'];
 
@@ -45,10 +49,10 @@ if ($action == 'produk_tambah') {
 
     if (!empty($lokasifoto)) {
         move_uploaded_file($lokasifoto, "../asset/foto-produk/$gambar");
-        mysqli_query($koneksi, "UPDATE produk SET nama_produk='$nama', id_kategori='$id_kategori', harga='$harga', gambar='$gambar', deskripsi='$deskripsi' WHERE id_produk='$_GET[id_produk]'");
+        mysqli_query($koneksi, "UPDATE produk SET nama_produk='$nama', id_kategori='$id_kategori', harga='$harga', panjang='$panjang', lebar='$lebar', gambar='$gambar', deskripsi='$deskripsi' WHERE id_produk='$_GET[id_produk]'");
     } else {
 
-        mysqli_query($koneksi, "UPDATE produk SET nama_produk='$nama', id_kategori='$id_kategori', harga='$harga', deskripsi='$deskripsi' WHERE id_produk='$_GET[id_produk]'");
+        mysqli_query($koneksi, "UPDATE produk SET nama_produk='$nama', id_kategori='$id_kategori', harga='$harga', panjang='$panjang', lebar='$lebar', deskripsi='$deskripsi' WHERE id_produk='$_GET[id_produk]'");
     }
     header("location:index.php?m=produk");
 
@@ -153,17 +157,8 @@ if ($action == 'produk_tambah') {
     }
 
 
-    // if ($pass1 != $pass_asli) {
-    //     // header("location:index.php?m=password&success=1");
-    //     echo "<script>alert('Password Lama Salah!');window.location='index.php?m=password'</script>";
-    // } else if ($pass2 != $pass3) {
+    // Register
 
-    //     // header("location:index.php?m=password&success=2");
-    //     echo "<script>alert('Konfirmasi Password Baru salah!');window.location='index.php?m=password'</script>";
-    // } else {
-    //     mysqli_query($koneksi, "UPDATE admin SET pass='$passwordhash2' WHERE id_admin='$id_admin'");
-    //     header("location:index.php?m=password");
-    // }
 } else if ($action == 'register') {
     $nama = $_POST['nama'];
     $user = $_POST['email'];
@@ -172,9 +167,73 @@ if ($action == 'produk_tambah') {
 
     $passwordhash = hash("sha256", $password);
 
-    $query = mysqli_query($koneksi, "INSERT INTO admin (nama, user, pass) VALUES ('$nama', '$user', '$passwordhash')");
+    if ($repassword != $password) {
+        echo "<script>alert('Password dan Konfirmasi Password tidak sesuai!');document.location='index.php?m=register'</script>";
+    } else {
 
-    header("location: index.php?m=produk");
+        $query = mysqli_query($koneksi, "INSERT INTO admin (nama, user, pass) VALUES ('$nama', '$user', '$passwordhash')");
+
+        header("location: index.php?m=produk");
+    }
+
+
+    // Konfigurasi SEO
+
+} else if ($action == 'send_email') {
+
+    $email = $_POST['email'];
+
+    $select = mysqli_query($koneksi, "SELECT user, pass FROM admin WHERE user='$email'");
+    if (mysqli_num_rows($select) == 1) {
+        while ($row = mysqli_fetch_array($select)) {
+            $email = $row['user'];
+
+            $pass = $row['pass'];
+        }
+        //$link="<a href='localhost:8080/phpmailer/reset_pass.php?key=".$email."&reset=".$pass."'>Click To Reset password</a>";
+        require_once('../phpmail/class.phpmailer.php');
+        require_once('../phpmail/class.smtp.php');
+        $mail = new PHPMailer();
+
+        $body      = "Klik link berikut untuk reset Password, <a href='http://gallerydejandi.jongkreatif.com/admin/reset-password.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email
+
+        // $body      = "Klik link berikut untuk reset Password, <a href='http://localhost/GalleryDeJandi/admin/reset-password.php?reset=$pass&key=$email'>$pass<a>"; //isi dari email
+
+        // $mail->CharSet =  "utf-8";
+        $mail->IsSMTP();
+        // enable SMTP authentication
+        $mail->SMTPDebug  = 1;
+        $mail->SMTPAuth = true;
+        // GMAIL username
+        $mail->Username = "iqbal.syko97@gmail.com";
+        // GMAIL password
+        $mail->Password = "holocaust";
+        $mail->SMTPSecure = "ssl";
+        // sets GMAIL as the SMTP server
+        $mail->Host = "smtp.gmail.com";
+        // set the SMTP port for the GMAIL server
+        $mail->Port = "465";
+        $mail->From = 'NoReply';
+        $mail->FromName = 'no_reply';
+
+        $email = $_POST['email'];
+
+        $mail->AddAddress($email, 'User Sistem');
+        $mail->Subject  =  'Reset Password';
+        $mail->IsHTML(true);
+        $mail->MsgHTML($body);
+        if ($mail->Send()) {
+            echo "<script> alert('Link reset password telah dikirim ke email anda, Cek email untuk melakukan reset'); window.location ='forgot-password.php'; </script>"; //jika pesan terkirim
+
+        } else {
+            echo "Mail Error - >" . $mail->ErrorInfo;
+        }
+    } else {
+        echo "<script> alert('Email anda tidak terdaftar di sistem'); window.location ='forgot-password.php'; </script>"; //jika pesan terkirim
+
+    }
+
+
 
     // Konfigurasi SEO
 
@@ -200,6 +259,17 @@ if ($action == 'produk_tambah') {
     // Logout
 
 } else if ($action == 'logout') {
+
+    // // Start session
+    // session_start();
+
+    // // Menghapus semua session yang telah didefinisikan
+    // session_destroy();
+
+    // // Mengarahkan menuju halaman login
+
+    // header("location: login.php");
+
     unset($_SESSION['login']);
     header("location:login.php");
 }

@@ -1,3 +1,11 @@
+<?php
+
+require_once("session.php");
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,10 +14,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Gallery De' Jandi - Login</title>
+    <title>Gallery De' Jandi - Forgot Password</title>
 
     <!-- Custom fonts for this template-->
     <link rel="icon" type="image/png" href="../images/icons/icon04.png" />
@@ -23,54 +29,42 @@
 
 <body class="bg-light">
 
+
     <div class="container">
 
         <div class="card o-hidden border-0 shadow-lg my-5" style="max-width: 500px; margin:auto">
-
             <div class="card-body p-0">
                 <!-- Nested Row within Card Body -->
                 <div class="row d-flex justify-content-center">
-
                     <div class="col-lg-12">
-
                         <div class="p-5">
                             <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Gallery De' Jandi</h1>
+                                <h1 class="h4 text-gray-900 mb-2">Forgot Your Password?</h1>
+                                <p class="mb-4">Please enter your email address below
+                                    and we'll send you a link to reset your password!</p>
                             </div>
-                            <form class="user" method="post" action="aksi.php?act=login">
+                            <form class="user" action="aksi.php?act=send_email" method="POST">
                                 <div class="form-group">
-                                    <input type="email" class="form-control form-control-user" name="user" aria-describedby="emailHelp" placeholder="Email Address..." required>
+                                    <input type="email" class="form-control form-control-user" id="exampleInputEmail" name="email" placeholder="Your Email Address">
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-user" name="pass" placeholder="Password" required>
-                                </div>
-                                <!-- <div class="form-group">
-                                    <div class="custom-control custom-checkbox small">
-                                        <input type="checkbox" class="custom-control-input" name="remember" id="customCheck">
-                                        <label class="custom-control-label" for="customCheck">Remember
-                                            Me</label>
-                                    </div>
-                                </div> -->
-                                <button type="submit" class="btn btn-primary btn-user btn-block">
-                                    Login
-                                </button>
+                                <input name="submit" type="submit" class="btn btn-primary btn-user btn-block" value="Reset Password" />
+                                <!-- <button type="submit" name="submit" class=" btn btn-primary btn-user btn-block"> Reset Password</button> -->
+                                <!-- <a type="submit" class="btn btn-primary btn-user btn-block">
+                                    Reset Password
+                                </a> -->
                             </form>
                             <hr>
+                            <!-- <div class="text-center">
+                                <a class="small" href="register.html">Create an Account!</a>
+                            </div> -->
                             <div class="text-center">
-                                <a class="small" href="forgot-password.php">Forgot Password?</a>
+                                <a class="small" href="login.php">Already have an account? Login!</a>
                             </div>
-
-                            <div class="text-center">
-                                <!-- <a class="small" href="http://localhost/GalleryDeJandi/">Back to Home</a> -->
-                                <a class="small" href="http://gallerydejandi.jongkreatif.com">Back to Home</a>
-                            </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- Outer Row -->
 
     </div>
 
@@ -83,7 +77,6 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
-
 </body>
 
 </html>

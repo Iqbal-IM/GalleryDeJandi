@@ -1,5 +1,5 @@
 <!-- Title page -->
-<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/bg-01.jpg');">
+<section class="bg-img1 txt-center p-lr-15 p-tb-92" style="background-image: url('images/about.jpg');">
 	<h2 class="ltext-105 cl0 txt-center">
 		About
 	</h2>
@@ -16,24 +16,17 @@
 						Our Story
 					</h3>
 
-					<p class="stext-113 cl6 p-b-26">
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris consequat consequat enim, non auctor massa ultrices non. Morbi sed odio massa. Quisque at vehicula tellus, sed tincidunt augue. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas varius egestas diam, eu sodales metus scelerisque congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Maecenas gravida justo eu arcu egestas convallis. Nullam eu erat bibendum, tempus ipsum eget, dictum enim. Donec non neque ut enim dapibus tincidunt vitae nec augue. Suspendisse potenti. Proin ut est diam. Donec condimentum euismod tortor, eget facilisis diam faucibus et. Morbi a tempor elit.
+					<p class="stext-113 cl6 p-b-15">
+						Usaha penjualan kain tenun tradisional ini awalnya hanya sebatas hobi saya yang suka travelling ke daerah-daerah di Nusa Tenggara Timur. Namun Karena saya sering memposting hasil jepretan gambar di sosial media, ternyata banyak teman-teman dari luar kota yang tertarik dan apreasiasi pada kain-kain khas daerah di setiap daerah yang ada di NTT dan mereka pun sangat antusias serta meminta saya untuk membeli beberapa oleh-oleh khas daerah yang saya kunjungi itu. Saya pun membeli satu kain lalu menjual kembali dengan harga yang sama, namun saya terkejut ternyata saya juga mendapat uang dari penenun, jadi saya mendapat keuntungan tambahan. Dengan modal tekad keberanian serta rasa percaya diri yang kuat dan dukungan penuh dari keluarga, akhirnya saya membuka Usaha penjualan kain tenun tradisional dengan nama <strong>GALLERY DE’ JANDI</strong>. Nama <strong>GALLERY DE’ JANDI</strong> ini pun memiliki filosofi tersendiri yaitu terdiri dari 3 kata, Gallery mewakili bahasa Inggris, De’ dari bahasa Manggarai yang artinya Punya dan Jandi diambil dari marga keluarga.
 					</p>
 
-					<p class="stext-113 cl6 p-b-26">
-						Donec gravida lorem elit, quis condimentum ex semper sit amet. Fusce eget ligula magna. Aliquam aliquam imperdiet sodales. Ut fringilla turpis in vehicula vehicula. Pellentesque congue ac orci ut gravida. Aliquam erat volutpat. Donec iaculis lectus a arcu facilisis, eu sodales lectus sagittis. Etiam pellentesque, magna vel dictum rutrum, neque justo eleifend elit, vel tincidunt erat arcu ut sem. Sed rutrum, turpis ut commodo efficitur, quam velit convallis ipsum, et maximus enim ligula ac ligula.
-					</p>
-
-					<p class="stext-113 cl6 p-b-26">
-						Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
-					</p>
 				</div>
 			</div>
 
 			<div class="col-11 col-md-5 col-lg-4 m-lr-auto">
 				<div class="how-bor1 ">
 					<div class="hov-img0">
-						<img src="images/about-01.jpg" alt="IMG">
+						<img src="images/about-02.jpeg" alt="IMG">
 					</div>
 				</div>
 			</div>
@@ -46,26 +39,29 @@
 						Our Mission
 					</h3>
 
-					<p class="stext-113 cl6 p-b-26">
-						Mauris non lacinia magna. Sed nec lobortis dolor. Vestibulum rhoncus dignissim risus, sed consectetur erat. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nullam maximus mauris sit amet odio convallis, in pharetra magna gravida. Praesent sed nunc fermentum mi molestie tempor. Morbi vitae viverra odio. Pellentesque ac velit egestas, luctus arcu non, laoreet mauris. Sed in ipsum tempor, consequat odio in, porttitor ante. Ut mauris ligula, volutpat in sodales in, porta non odio. Pellentesque tempor urna vitae mi vestibulum, nec venenatis nulla lobortis. Proin at gravida ante. Mauris auctor purus at lacus maximus euismod. Pellentesque vulputate massa ut nisl hendrerit, eget elementum libero iaculis.
+					<p class="stext-113 cl6 p-b-15">
+						Kegiatan menenun dikembangkan oleh setiap suku di Nusa Tenggara Timur secara turun-temurun, demi pelestarian seni tenun tersebut. Kain Tenunan bagi masyarakat Nusa Tenggara Timur dipandang sebagai harta berharga bagi setiap suku keluarga yang nilai nya sangat bermakna
 					</p>
 
-					<div class="bor16 p-l-29 p-b-9 m-t-22">
-						<p class="stext-114 cl6 p-r-40 p-b-11">
-							Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while.
-						</p>
+					<p class="stext-113 cl6 p-b-15">
+						Pasalnya, selain tingkat kesulitan dalam proses pembuatan, juga model motif tenun yang dihasilkan penenun, tak heran, proses menenun itu menghasilkan harga kain yang cukup mahal karena mempunyai khas dan nilainya tersindiri untuk setiap suku adat yang ada di NTT. Beragam kain tenun di NTT dijual dengan harga yang cukup tinggi karena proses pembuatan serta makna di balik hasil tenun tersebut sangat bernilai dalam keragaman budaya yang ada di Provinsi Nusa Tenggara Timur.
+					</p>
 
-						<span class="stext-111 cl8">
-							- Steve Job’s
-						</span>
-					</div>
+					<p class="stext-113 cl6 p-b-15">
+						Dahulu kala, kain tenun dibuat untuk memenuhi kebutuhan sehari-hari, yakni sebagai busana biasa. Namun kemudian berkembang untuk kebutuhan adat, seperti upacara, tarian, perkawinan, dan pesta. Saat ini, kain tenun juga biasa digunakan sebagai selendang, sarung, selimut, hingga pakaian.
+					</p>
+
+					<p class="stext-113 cl6 p-b-15">
+						Dengan adanya <strong>Gallery De’ Jandi</strong> dapat menjadi wadah untuk mempermudah para penenun untuk memasarkan hasil tenunannya.
+					</p>
+
 				</div>
 			</div>
 
 			<div class="order-md-1 col-11 col-md-5 col-lg-4 m-lr-auto p-b-30">
 				<div class="how-bor2">
 					<div class="hov-img0">
-						<img src="images/about-02.jpg" alt="IMG">
+						<img src="images/about01.jpg" alt="IMG">
 					</div>
 				</div>
 			</div>

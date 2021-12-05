@@ -39,6 +39,16 @@ require_once("session.php");
             </div>
 
             <div class="form-group">
+                <label>Panjang (cm)</label>
+                <input type="text" class="form-control" name="panjang" value="<?= $row->panjang ?>">
+            </div>
+
+            <div class="form-group">
+                <label>Lebar (cm)</label>
+                <input type="text" class="form-control" name="lebar" value="<?= $row->lebar ?>">
+            </div>
+
+            <div class="form-group">
                 <img class="preview" src="../asset/foto-produk/<?= $row->gambar ?>" style="height:120px; width:120px;" />
                 <!-- <a href="aksi.php?act=hapus_foto&id_produk=<?= $row->id_produk ?>">Hapus Gambar</a> -->
             </div>

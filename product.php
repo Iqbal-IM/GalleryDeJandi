@@ -21,22 +21,31 @@
 		</div>
 
 		<div class="row isotope-grid">
+
 			<?php
+
 			if ($_GET['id_kategori'])
 				$where .= " AND kategori.id_kategori='$_GET[id_kategori]'";
+
 			$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori WHERE (nama_produk LIKE '%$_GET[q]%') $where ORDER BY id_produk");
+
+			$cek = mysqli_num_rows($query);
+			if (empty($cek)) {
+				echo "<script>alert('Data yang Anda Cari Tidak Ada');window.close()</script>";
+				// echo "<script>alert('Data yang Anda Cari Tidak Ada');document.location='index.php?m=product'</script>";
+			}
 			while ($row = mysqli_fetch_object($query)) { ?>
-				<div class="col-6 col-md-4 col-lg-3 p-b-35 isotope-item">
-					<!-- Block2 -->
+				<div class="col-6 col-md-4 col-lg-3 p-b-35 p-lr-15 isotope-item">
+
 					<div class="block2">
 						<div class="block2-pic hov-img0">
 							<a href="?m=product-detail&id_produk=<?= $row->id_produk ?>">
-								<img src="asset/foto-produk/<?= $row->gambar ?>" alt="<?= $row->nama_produk ?>">
+								<img id="gambar1" src="asset/foto-produk/<?= $row->gambar ?>" alt="<?= $row->nama_produk ?>">
 							</a>
 
-							<a href="#mymodal?id_produk=<?= $row->id_produk ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+							<button id="quick-view" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" data-target="#modal-view" data-id="<?= $row->id_produk ?>" data-kategori="<?= $row->nama_kategori ?>" data-image="<?= $row->gambar ?>" data-deskripsi="<?= $row->deskripsi ?>" data-harga="<?= $row->harga ?>" data-pjg="<?= $row->panjang ?>" data-lbr="<?= $row->lebar ?>" data-nama="<?= $row->nama_produk ?>">
 								Quick View
-							</a>
+							</button>
 						</div>
 
 						<div class="block2-txt flex-w flex-t p-t-14">
@@ -46,8 +55,7 @@
 								</a>
 
 								<span class="stext-105 cl3">
-									<!-- Rp <?= number_format($row->harga, 2, ",", ".") ?> -->
-									Rp <?= number_format($row->harga) ?>
+									Rp <?= number_format($row->harga, 0, ",", ".") ?>
 								</span>
 							</div>
 
@@ -56,9 +64,34 @@
 				</div>
 			<?php } ?>
 
-
-
 		</div>
+
+		<!-- <div class="flex-c-m flex-w w-full p-t-38">
+			<a <?php if ($halaman > 1) {
+					echo "href='?halaman=$Previous'";
+				} ?> class="flex-c-m how-pagination1 trans-04 m-all-7 active-pagination1">
+				1
+			</a>
+
+			<?php
+			for ($x = 1; $x <= $total_halaman; $x++) {
+			?>
+
+				<a class="flex-c-m how-pagination1 trans-04 m-all-7" href="?halaman=<?php echo $x ?>"><?php echo $x; ?>>
+				</a>
+
+			<?php
+
+			} ?>
+
+			<a class="flex-c-m how-pagination1 trans-04 m-all-7" <?php if ($halaman < $total_halaman) {
+																		echo "href='?halaman=$next'";
+																	} ?>>
+				2
+			</a>
+		</div> -->
+
+
 
 		<!-- Load more -->
 		<!-- <div class="flex-c-m flex-w w-full p-t-45">

@@ -1,7 +1,3 @@
-<?php
-
-session_start()
-?>
 <div class="container">
     <div class="card o-hidden border-0 shadow-lg my-5" style="max-width: 500px; margin:auto">
         <div class="card-body p-0">

@@ -11,11 +11,6 @@ $row = mysqli_fetch_object($query);
 			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
 		</a>
 
-		<a href="?m=product" class="stext-109 cl8 hov-cl1 trans-04">
-			Product
-			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
-		</a>
-
 		<a href="?m=product&id_kategori=<?= $row->id_kategori ?>" class="stext-109 cl8 hov-cl1 trans-04">
 			<?= $row->nama_kategori ?>
 			<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
@@ -32,7 +27,7 @@ $row = mysqli_fetch_object($query);
 <section class="sec-product-detail bg0 p-t-65 p-b-60">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6 col-lg-7 p-b-30">
+			<div class="col-md-6 col-lg-6 p-b-30">
 				<div class="p-l-25 p-r-30 p-lr-0-lg">
 					<div class="wrap-slick3 flex-sb flex-w">
 						<div class="wrap-slick3-dots"></div>
@@ -74,19 +69,17 @@ $row = mysqli_fetch_object($query);
 				</div>
 			</div>
 
-			<div class="col-md-6 col-lg-5 col-sm-12 p-b-30">
+			<div class="col-md-6 col-lg-6 col-sm-12 p-b-30">
 				<div class="p-r-50 p-t-5 p-lr-0-lg">
 					<h4 class="mtext-105 cl2 js-name-detail p-b-14">
 						<?= $row->nama_produk ?>
 					</h4>
 
 					<span class="mtext-106 cl2">
-						Rp. <?= number_format($row->harga) ?>
+						Rp <?= number_format($row->harga, 0, ",", ".") ?>
 					</span>
 
-					<!-- <p class="stext-102 cl3 p-t-23 col-sm-12">
-						<?= $row->deskripsi ?>
-					</p> -->
+
 
 					<!--  -->
 					<div class="p-t-10">
@@ -124,25 +117,25 @@ $row = mysqli_fetch_object($query);
 												<ul class="p-lr-28 p-lr-15-sm">
 													<li class="flex-w flex-t p-b-7">
 														<span class="stext-102 cl3 size-205">
-															Weight
+															Length
 														</span>
 
 														<span class="stext-102 cl6 size-206">
-															0.79 kg
+															: <?= $row->panjang ?>
 														</span>
 													</li>
 
 													<li class="flex-w flex-t p-b-7">
 														<span class="stext-102 cl3 size-205">
-															Dimensions
+															Width
 														</span>
 
 														<span class="stext-102 cl6 size-206">
-															110 x 33 x 100 cm
+															: <?= $row->lebar ?>
 														</span>
 													</li>
 
-													<li class="flex-w flex-t p-b-7">
+													<!-- <li class="flex-w flex-t p-b-7">
 														<span class="stext-102 cl3 size-205">
 															Materials
 														</span>
@@ -150,27 +143,8 @@ $row = mysqli_fetch_object($query);
 														<span class="stext-102 cl6 size-206">
 															60% cotton
 														</span>
-													</li>
+													</li> -->
 
-													<li class="flex-w flex-t p-b-7">
-														<span class="stext-102 cl3 size-205">
-															Color
-														</span>
-
-														<span class="stext-102 cl6 size-206">
-															Black, Blue
-														</span>
-													</li>
-
-													<li class="flex-w flex-t p-b-7">
-														<span class="stext-102 cl3 size-205">
-															Size
-														</span>
-
-														<span class="stext-102 cl6 size-206">
-															XL, L, M, S
-														</span>
-													</li>
 												</ul>
 											</div>
 										</div>
@@ -195,26 +169,7 @@ $row = mysqli_fetch_object($query);
 						</div>
 					</div>
 
-					<!--  -->
-					<div class="flex-w flex-m p-l-100 p-t-40 respon7">
-						<div class="flex-m bor9 p-r-10 m-r-11">
-							<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 js-addwish-detail tooltip100" data-tooltip="Add to Wishlist">
-								<i class="zmdi zmdi-favorite"></i>
-							</a>
-						</div>
 
-						<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Facebook">
-							<i class="fa fa-facebook"></i>
-						</a>
-
-						<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Twitter">
-							<i class="fa fa-twitter"></i>
-						</a>
-
-						<a href="#" class="fs-14 cl3 hov-cl1 trans-04 lh-10 p-lr-5 p-tb-2 m-r-8 tooltip100" data-tooltip="Google Plus">
-							<i class="fa fa-google-plus"></i>
-						</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -222,17 +177,7 @@ $row = mysqli_fetch_object($query);
 
 	</div>
 
-	<div class="bg6 flex-c-m flex-w size-302 m-t-73 p-tb-15">
-		<span class="stext-107 cl6 p-lr-25">
-			SKU: <?php if ($row->id_kategori == 1) {
-						echo "FS - 01" . $row->id_produk;
-					} else if ($row->id_kategori == 2) {
-						echo "TN - 01" . $row->id_produk;
-					} else {
-						echo "AC - 01" . $row->id_produk;
-					}
-					?>
-		</span>
+	<div class="bg6 flex-c-m flex-w size-302 m-t-30 p-tb-10">
 
 		<span class="stext-107 cl6 p-lr-25">
 			Categories : <?= $row->nama_kategori ?>
@@ -255,18 +200,19 @@ $row = mysqli_fetch_object($query);
 		<div class="wrap-slick2">
 			<div class="slick2">
 				<?php
-				$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori");
+				$query = mysqli_query($koneksi, "SELECT * FROM produk JOIN kategori ON kategori.id_kategori=produk.id_kategori ORDER BY RAND(id_produk) LIMIT 8");
 				while ($row = mysqli_fetch_object($query)) { ?>
-					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15">
+					<div class="item-slick2 p-l-15 p-r-15 p-t-15 p-b-15 col-12 col-lg-3">
 						<!-- Block2 -->
 						<div class="block2">
 							<div id="blk2" class="block2-pic hov-img0">
 								<a href="?m=product-detail&id_produk=<?= $row->id_produk ?>">
 									<img src="asset/foto-produk/<?= $row->gambar ?>" alt="IMG-PRODUCT">
 								</a>
-								<a href="#" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
+
+								<button id="quick-view" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1" data-target="#modal-view" data-id="<?= $row->id_produk ?>" data-kategori="<?= $row->nama_kategori ?>" data-image="<?= $row->gambar ?>" data-deskripsi="<?= $row->deskripsi ?>" data-harga="<?= $row->harga ?>" data-pjg="<?= $row->panjang ?>" data-lbr="<?= $row->lebar ?>" data-nama="<?= $row->nama_produk ?>">
 									Quick View
-								</a>
+								</button>
 							</div>
 
 							<div class="block2-txt flex-w flex-t p-t-14">

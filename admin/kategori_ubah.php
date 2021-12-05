@@ -4,6 +4,7 @@ $row = mysqli_fetch_object($query);
 
 require_once("session.php");
 
+
 ?>
 
 <h1 class="h3 mb-4 text-gray-800" style="text-align: center;">Ubah Kategori</h1>

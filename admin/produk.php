@@ -14,11 +14,12 @@
                 <thead>
                     <tr>
                         <th>No</th>
+                        <th>Gambar</th>
                         <th>Nama Produk</th>
                         <th>Kategori</th>
                         <th>Harga</th>
-                        <th>Gambar</th>
                         <th>Deskripsi</th>
+                        <th>Dimensi</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -29,16 +30,29 @@
                     while ($row = mysqli_fetch_object($query)) { ?>
                         <tr>
                             <td><?= $a; ?></td>
-                            <td><?= $row->nama_produk; ?></td>
-                            <td><?= $row->nama_kategori; ?></td>
-                            <td>Rp <?= number_format($row->harga) ?></td>
                             <td>
                                 <img src="../asset/foto-produk/<?= $row->gambar; ?>" height="80px" width="80px" style="object-fit: cover;">
                             </td>
-                            <td><?= substr($row->deskripsi, 0, 20) ?></td>
+                            <td><?= $row->nama_produk; ?></td>
+                            <td><?= $row->nama_kategori; ?></td>
+                            <td>Rp <?= number_format($row->harga, 0, ",", ".") ?></td>
+                            <td style="white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 120px;"><?= $row->deskripsi ?></td>
+                            <td><?= $row->panjang ?> x <?= $row->lebar ?></td>
                             <td>
-                                <a class='btn btn-sm btn-warning' href='?m=produk_ubah&id_produk=<?= $row->id_produk ?>'><i class="fa fa-edit"></i></a>
-                                <a class='btn btn-sm btn-danger' href='aksi.php?act=produk_hapus&id_produk=<?= $row->id_produk ?>' onclick="return confirm('Hapus Data Produk?')"><i class="fa fa-trash"></i></a>
+                                <div class="dropdown">
+                                    <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                        <i class="fa fa-bars"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                        <a class="dropdown-item" href='?m=produk_ubah&id_produk=<?= $row->id_produk ?>'><i class="fa fa-edit"></i> Edit</a>
+                                        <a class="dropdown-item" href='aksi.php?act=produk_hapus&id_produk=<?= $row->id_produk ?>' onclick="return confirm('Hapus Data Produk?')"><i class="fa fa-trash"></i> Delete</a>
+                                    </div>
+                                </div>
+                                <!-- <a class='btn btn-sm btn-warning' href='?m=produk_ubah&id_produk=<?= $row->id_produk ?>'><i class="fa fa-edit"></i></a>
+                                <a class='btn btn-sm btn-danger' href='aksi.php?act=produk_hapus&id_produk=<?= $row->id_produk ?>' onclick="return confirm('Hapus Data Produk?')"><i class="fa fa-trash"></i></a> -->
 
                             </td>
                         </tr>

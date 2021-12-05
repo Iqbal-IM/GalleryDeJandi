@@ -1,8 +1,5 @@
 <?php
 
-require_once("session.php");
-
-
 
 $select = mysqli_query($koneksi, "SELECT * FROM seo");
 
