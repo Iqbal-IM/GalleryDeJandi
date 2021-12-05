@@ -95,7 +95,7 @@ if ($_SESSION['login'] == '') {
                 <!-- <a class="nav-link" href="http://localhost/GalleryDeJandi/">
                     <i class="fas fa-rocket"></i>
                     <span>Go to Landing Page</span></a> -->
-                <a class="nav-link" href="http://gallerydejandi.jongkreatif.com" target="_blank">
+                <a class="nav-link" href="http://gallerydejandi.jongkreatif.com">
                     <i class="fas fa-rocket"></i>
                     <span>Go to Landing Page</span></a>
             </li>
@@ -255,15 +255,11 @@ if ($_SESSION['login'] == '') {
 
     <script type="text/javascript">
         var check = function() {
-            if (document.getElementById('password').value ==
+            if (document.getElementById('password').value !=
                 document.getElementById('re-password').value) {
-                document.getElementById('msg-reg').style.color = 'green';
-                document.getElementById('msg-reg').innerHTML = 'Password dan Konfirmasi Sama';
-            } else {
                 document.getElementById('msg-reg').style.color = 'red';
                 document.getElementById('msg-reg').innerHTML = 'Password dan Konfirmasi Tidak Sama';
             }
-
 
         }
     </script>
